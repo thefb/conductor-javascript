@@ -28,6 +28,7 @@ export enum TaskType {
   KAFKA_PUBLISH = "KAFKA_PUBLISH",
   JSON_JQ_TRANSFORM = "JSON_JQ_TRANSFORM",
   SET_VARIABLE = "SET_VARIABLE",
+  HUMAN = "HUMAN"
 }
 
 export type TaskDefTypes =
@@ -45,6 +46,7 @@ export type TaskDefTypes =
   | SwitchTaskDef
   | TerminateTaskDef
   | JoinTaskDef
+  | HumanTaskDef
   | WaitTaskDef;
 
 export interface DoWhileTaskDef extends CommonTaskDef {
@@ -191,6 +193,10 @@ export interface WaitTaskDef extends CommonTaskDef {
     duration?: string;
     until?: string;
   };
+}
+
+export interface HumanTaskDef extends CommonTaskDef {
+  type: TaskType.HUMAN;
 }
 
 export interface WorkflowDef

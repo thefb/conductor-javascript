@@ -16,6 +16,7 @@ import {
   JoinTaskDef,
   WaitTaskDef,
   TaskDefTypes,
+  HumanTaskDef,
   InlineTaskInputParameters,
 } from "../types";
 
@@ -34,6 +35,7 @@ export type TaskDefTypesGen =
   | SwitchTaskDefGen
   | TerminateTaskDef
   | JoinTaskDef
+  | HumanTaskDef
   | WaitTaskDef;
 
 export interface WorkflowDefGen extends Omit<WorkflowDef, "tasks"> {
